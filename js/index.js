@@ -88,6 +88,9 @@ const divAlerta = document.getElementById("div-alerta");
 
 const btnDialogRegistrarPonto = document.getElementById("btn-dialog-registrar-ponto");
 btnDialogRegistrarPonto.addEventListener("click", async () => {
+    // chamar o endpoint de criação de ponto (/ponto) com os dados no body
+    
+    
     let data = dataCompleta();
     let hora = horaCompleta();
     let tipoPonto = document.getElementById("select-tipos-ponto").value;
