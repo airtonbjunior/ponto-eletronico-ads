@@ -89,7 +89,26 @@ const divAlerta = document.getElementById("div-alerta");
 const btnDialogRegistrarPonto = document.getElementById("btn-dialog-registrar-ponto");
 btnDialogRegistrarPonto.addEventListener("click", async () => {
     // chamar o endpoint de criação de ponto (/ponto) com os dados no body
-    
+
+    // TO-DO: pegar os dados de parâmetro de forma dinâmica do frontend
+
+    const pontoAPI = await fetch('http://localhost:3000/ponto', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({
+            dataHora: "123456", // pegar dados da tela
+            tipo: "entrada", // pegar dados da tela
+            id_usuario: 1  // pegar dados da sessão
+        })
+    })
+    .then(() => 
+        { console.log("requisição feita com sucesso"); 
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+    console.log(pontoAPI);
     
     let data = dataCompleta();
     let hora = horaCompleta();
